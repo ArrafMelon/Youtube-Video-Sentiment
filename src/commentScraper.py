@@ -61,6 +61,6 @@ print(f"Total Comments fetched:{len(comments)}")
 df = pd.DataFrame(comments)
 
 # Only Keep a maximum of 1000 comments for analysis, sorted by likes count
-df = df.sort_values(by="Number of Likes", ascending=False)[:1000]
+df = df.sort_values(by="Number of Likes", ascending=False)[:1000].drop_duplicates()
 
 print(df.head())
