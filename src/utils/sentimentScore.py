@@ -17,8 +17,6 @@ api_key = os.getenv("YOUTUBE_API_KEY")
     
 #vid_id = sys.argv[1]
 
-vid_id = "EYgnaNx9xtI"
-
 yt_client = build("youtube", "v3", developerKey=api_key)
 
 def get_score(vid_id, client=yt_client):
@@ -38,6 +36,4 @@ def get_score(vid_id, client=yt_client):
         prediction = torch.argmax(logits, dim=1)
 
     comment_df["Predicted_class"] = prediction.numpy()
-    return comment_df["Predicted_class"].value_counts()
-
-print(get_score(vid_id))
+    return comment_df
