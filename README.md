@@ -1,6 +1,6 @@
 # YouTube Comment Sentiment Analysis Dashboard
 
-Uses a Fine-tuned BERT natural language model to analyze the top 100 liked comments on a given YouTube video URL, outputs a dash made in Plotly. 
+Uses a Fine-tuned BERT natural language model to analyze the top 100 liked comments on a given YouTube video URL, and outputs a dashboard made in Plotly. 
 
 ---
 
