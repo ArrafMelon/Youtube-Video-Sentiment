@@ -9,8 +9,8 @@ app = Dash(__name__)
 app.layout = html.Div(
     style={
         'fontFamily': 'Arial, sans-serif',
-        'minHeight': '100vh',         
-        'width': '100vw',           
+        'minHeight': '100vh',
+        'width': '100vw',
         'backgroundColor': '#282828',
         'color': '#ffffff',
         'display': 'flex',
@@ -65,15 +65,29 @@ app.layout = html.Div(
                 ], style={'textAlign': 'center', 'marginBottom': '30px'}),
 
                 dcc.Loading(
-                    dcc.Graph(
-                        id='sentiment-graph',
+                    html.Div(
+                        dcc.Graph(
+                            id='sentiment-graph',
+                            style={
+                                'width': '100%',
+                                'height': '100%',
+                                'minHeight': '400px',
+                            }
+                        ),
                         style={
-                            'flexGrow': 1,     
-                            'minHeight': '400px',  
+                            'display': 'flex',
+                            'justifyContent': 'center',
+                            'alignItems': 'center',
+                            'flexGrow': 1,
+                            'minHeight': '400px',
                         }
                     ),
                     type='circle',
-                    style={'textAlign': 'center', 'flexGrow': 1}
+                    style={
+                        'flexGrow': 1,
+                        'width': '100%',
+                        'minHeight': '400px',
+                    }
                 ),
 
                 html.Div(
@@ -84,9 +98,6 @@ app.layout = html.Div(
                         'color': '#aaaaaa',
                         'fontSize': '14px'
                     },
-                    children=[
-                        "Built with ", html.A("Dash", href="https://dash.plotly.com/", target="_blank", style={'color': '#D42B12', 'textDecoration': 'none'}), " and Plotly"
-                    ]
                 )
             ]
         )
@@ -115,7 +126,7 @@ def update_graph(n_clicks, url):
                 plot_bgcolor='#282828',
                 paper_bgcolor='#282828',
                 font={'color': '#ffffff'},
-                height=600,  #
+                height=600,
             )
         )
     fig = graph.make_graph(url)
