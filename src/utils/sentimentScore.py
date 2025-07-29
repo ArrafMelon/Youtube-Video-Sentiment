@@ -1,4 +1,4 @@
-import commentScraper
+from . import commentScraper
 from googleapiclient.discovery import build 
 import sys
 from dotenv import load_dotenv
@@ -23,7 +23,9 @@ def get_score(vid_id, client=yt_client):
     comment_df = commentScraper.comments_df(client,vid_id).sort_values(by="Number of Likes", ascending=False)[:100].drop_duplicates()
 
     tokenizer = AutoTokenizer.from_pretrained('cardiffnlp/twitter-roberta-base-sentiment')
-    model = AutoModelForSequenceClassification.from_pretrained('model', local_files_only=True)
+    current_dir = os.path.dirname(__file__)
+    model_path = os.path.join(current_dir, 'model')
+    model = AutoModelForSequenceClassification.from_pretrained(model_path, local_files_only=True)
     model.eval()
 
     text = comment_df["Comment"].tolist()
