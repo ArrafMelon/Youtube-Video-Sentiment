@@ -49,3 +49,16 @@ python src/main.py
 ```
 
 Then open browser and head to: http://127.0.0.1:8050/
+
+---
+
+## Example 
+
+### Youtube Video:
+<img width="1327" height="964" alt="Screenshot (113)" src="https://github.com/user-attachments/assets/e3c2e460-9e6c-487b-80d3-348fe90cf09d" />
+
+### Output:
+<img width="1912" height="974" alt="Screenshot (114)" src="https://github.com/user-attachments/assets/9fb944df-d4bd-43e2-929a-93a42ce79a92" />
+
+
+
